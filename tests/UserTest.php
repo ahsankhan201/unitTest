@@ -3,8 +3,6 @@
 //namespace unitTestSample\Test;
 
 use PHPUnit\Framework\TestCase;
-
-//use unitTestSample\User;
 require_once 'src/User.php';
 
 class UserTest extends TestCase {
@@ -41,6 +39,7 @@ public function invokeMethod(&$object, $methodName, array $parameters = array())
         $user = new User($detail);
         $password = "foobar";
         $user->setPassword($password);
+        // Make Password for testing
         $expextedPassword = md5($password); //'5185e8b8fd8a71fc80545e144f91faf2';
         $currentUser = $user->getUser();
         $result = $this->invokeMethod($user, 'cryptPassword', array('foobar'));
