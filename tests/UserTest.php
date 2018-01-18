@@ -41,7 +41,7 @@ public function invokeMethod(&$object, $methodName, array $parameters = array())
         $user->setPassword($password);
         // Make Password for testing
         $expextedPassword = md5($password); //'5185e8b8fd8a71fc80545e144f91faf2';
-        $currentUser = $user->getUser();
+        //$currentUser = $user->getUser();
         $result = $this->invokeMethod($user, 'cryptPassword', array('foobar'));
         $this->assertEquals($expextedPassword, $result);
 
